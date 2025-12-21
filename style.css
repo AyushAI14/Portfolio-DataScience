@@ -425,3 +425,7 @@ footer {
         font-size:10px;
     }
 }
+.icons a {
+    text-decoration: none;
+    display: inline-block; /* Helps prevent unwanted spacing issues */
+}
