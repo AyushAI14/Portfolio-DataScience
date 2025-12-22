@@ -429,3 +429,109 @@ footer {
     text-decoration: none;
     display: inline-block; /* Helps prevent unwanted spacing issues */
 }
+/* SPOTIFY CARD STYLES */
+.page-wrapper {
+    position: relative; /* Ensure card is positioned relative to this */
+}
+
+.spotify-floating {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 12px 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.spotify-floating:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #1DB954; /* Spotify Green */
+}
+
+.spotify-status {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1DB954;
+    margin-bottom: 4px;
+}
+
+.spotify-track-name {
+    font-size: 14px;
+    font-weight: bold;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.spotify-artist {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.spotify-icon i {
+    font-size: 24px;
+    color: #1DB954;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Hide for very small screens */
+@media (max-width: 600px) {
+    .spotify-floating {
+        position: static;
+        margin: 0 auto 20px auto;
+        width: fit-content;
+    }
+}
+/* Update the existing floating card */
+.spotify-floating {
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Standard icon state - no animation here */
+.spotify-icon i {
+    font-size: 24px;
+    color: #1DB954;
+    transition: transform 0.3s ease;
+}
+
+/* Only pulse when NOT playing (subtle) */
+.spotify-floating:not(.is-playing) .spotify-icon i {
+    animation: pulse 2s infinite;
+}
+
+/* Strong pulse when music is actually playing */
+.is-playing .spotify-icon i {
+    color: #1DB954;
+    text-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+    animation: spotify-pulse 1.5s infinite !important;
+}
+
+@keyframes spotify-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* Truncate long song names */
+.spotify-track-name {
+    width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

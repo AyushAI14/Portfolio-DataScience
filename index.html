@@ -1,249 +1,308 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ayush — ML Portfolio</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayush — ML Portfolio</title>
+        <!-- ICONS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
 
-    <!-- ICONS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!-- STYLES -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-    <!-- STYLES -->
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+    <body>
         <div class="page-wrapper">
             <div class="ocean">
                 <div class="wave wave1"></div>
                 <div class="wave wave2"></div>
             </div>
 
-
-        <!-- HEADER -->
-        <header class="hero">
-            <img src="avatar.jpg" class ='avatar-round'>
-
-            <h1>Ayush Vishwakarma</h1>
-            <p class="sub">Data Science | ML | NLP | Agentic AI | MLOps</p>
-            <div class="icons">
-                <br>
-                <a href="mailto:ayushvishwakarma1405@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/ayush-vishwakarma-a2450a28b" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/AyushAI14" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://leetcode.com/u/ayushaiml14/" target="_blank">
-                    <i class="devicon-leetcode-plain"></i>
-                </a>
-            </div>
-            <br>
-
-            <p class="desc">
-                Machine Learning Engineer specializing in LLMs, RAG pipelines, MLOps architectures,
-                and agent-based automation systems.
-            </p>
-        </header>
-
-        <!-- SKILLS -->
-        <section class="skills" id="skills">
-            <h2>Skills</h2>
-
-            <div class="skill-tags">
-                <span>Python</span>
-                <span>SQL</span>
-                <span>NLP</span>
-                <span>LLMs</span>
-                <span>MLOps</span>
-                <span>FastAPI</span>
-                <span>Docker</span>
-                <span>LangChain</span>
-                <span>Autogen</span>
-                <span>Google ADK</span>
-                <span>Agentic AI</span>
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section class="projects" id="projects">
-            <h2>Projects</h2>
-        
-            <div class="project-grid">
-        
-                <div class="project-card fadeUp tilt">
-                    <img src="datapilotai.png">
-                    <h3>DataPilot — Agentic AI</h3>
-        
-                    <p class="mini-desc">
-                        Multi-agent Data Science workflow automation system powered by Google ADK.
-                    </p>
-        
-                    <ul class="tech">
-                        <li>Google ADK</li>
-                        <li>Python</li>
-                        <li>Kaggle MCP</li>
-                        <li>FireCrawl MCP</li>
-                        <li>Prompt Engineering</li>
-                        <li>Gemini API</li>
-                    </ul>
-        
-                    <a class="gh" href="https://github.com/AyushAI14/Datapilot-AI-Agent" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
+            <div id="spotify-card" class="spotify-floating">
+                <div class="spotify-info">
+                    <div class="spotify-status">Currently Playing</div>
+                    <div class="spotify-track-name" id="track-name">
+                        Not Listening
+                    </div>
+                    <div class="spotify-artist" id="artist-name">Spotify</div>
                 </div>
-        
-        
-                <div class="project-card fadeUp tilt">
-                    <img src="rag_image.png">
-                    <h3>Crypto Whitepaper RAG Bot</h3>
-        
-                    <p class="mini-desc">
-                        Interact with any crypto whitepaper using Agentic RAG and Milvus Vector DB.
-                    </p>
-        
-                    <ul class="tech">
-                        <li>RAG</li>
-                        <li>Web-Scraping</li>
-                        <li>LangChain</li>
-                        <li>Milvus</li>
-                        <li>Gemini</li>
-                    </ul>
-        
-                    <a class="gh" href="https://github.com/AyushAI14/LLM-Powered-Crypto-Whitepaper-Chatbot" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
+                <div class="spotify-icon">
+                    <i class="fa-brands fa-spotify"></i>
                 </div>
-        
-        
-                <div class="project-card fadeUp tilt">
-                    <img src="capstone-mlops.jpeg">
-                    <h3>MLOps Capstone</h3>
-        
-                    <p class="mini-desc">
-                        Full ML lifecycle architecture: pipelines, tracking, CI/CD & deployment.
-                    </p>
-        
-                    <ul class="tech">
-                        <li>Python</li>
-                        <li>Scikit-learn</li>
-                        <li>Dagshub</li>
-                        <li>FastAPI</li>
-                        <li>DVC</li>
-                        <li>Docker</li>
-                        <li>MLflow</li>
-                    </ul>
-        
-                    <a class="gh" href="https://github.com/AyushAI14/Mlops-Capstone-Project" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
-        
-        
-                <div class="project-card fadeUp tilt">
-                    <img src="toxiccoment.png">
-                    <h3>Toxic Comment Analyzer</h3>
-        
-                    <p class="mini-desc">
-                        Fine-tuned DistilBERT toxicity classification for YouTube comments.
-                    </p>
-        
-                    <ul class="tech">
-                        <li>NLP</li>
-                        <li>BERT</li>
-                        <li>FastAPI</li>
-                        <li>Streamlit</li>
-                    </ul>
-        
-                    <a class="gh" href="https://github.com/AyushAI14/Toxic-Comment-Analyser" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
-                <div class="project-card fadeUp tilt">
-                    <img src="vechile.png">
-                    <h3>Vehicle Price Prediction</h3>
-        
-                    <p class="mini-desc">
-                        End to End Predicting the selling price of vehicles using machine learning models.</p>
-                    <ul class="tech">
-                        <li>Python</li>
-                        <li>pandas</li>
-                        <li>numpy</li>
-                        <li>matplotlib</li>
-                        <li>XGBoost</li>
-                        <li>FastAPI</li>
-                    </ul>
-        
-                    <a class="gh" href="https://github.com/AyushAI14/Vehicle_Price_Prediction" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
-                <div class="project-card fadeUp tilt">
-                    <img src="warehouse.png">
-                    <h3>Data Warehouse Project</h3>
-        
-                    <p class="mini-desc">
-                        Builds a structured SQL warehouse, transforming raw CRM data into query-ready analytical reporting layers.                    <ul class="tech">
-                        <li>SQL</li>
-                        <li>ETL</li>
-                        <li>Data Warehouse</li>
-                    </ul>
-        
-                    <a class="gh" href="https://github.com/AyushAI14/SQL-Data-Warehouse-" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
-        
-            </div>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section class="experience" id="experience">
-            <h2>Experience</h2>
-
-            <div class="exp-box">
-                <h3>Machine Learning Intern — Unified Mentor Pvt. Ltd.</h3>
-                <p>Apr 2025 – May 2025 | Remote</p>
-
-                <ul>
-                    <li>Built classical ML models using sklearn + pandas.</li>
-                    <li>Deployed FastAPI inference container system.</li>
-                    <li>Automated CI/CD with GitHub pipelines.</li>
-                </ul>
             </div>
 
-        </section>
+            <!-- HEADER -->
+            <header class="hero">
+                <img src="avatar.jpg" class="avatar-round" />
 
-        <!-- CONTACT -->
-        <section class="contact" id="contact">
-            <h2>Contact</h2>
+                <h1>Ayush Vishwakarma</h1>
+                <p class="sub">Data Science | ML | NLP | Agentic AI | MLOps</p>
+                <div class="icons">
+                    <br />
+                    <a href="mailto:ayushvishwakarma1405@gmail.com"
+                        ><i class="fa-solid fa-envelope"></i
+                    ></a>
+                    <a
+                        href="https://www.linkedin.com/in/ayush-vishwakarma-a2450a28b"
+                        target="_blank"
+                    >
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/AyushAI14" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                        href="https://leetcode.com/u/ayushaiml14/"
+                        target="_blank"
+                    >
+                        <i class="devicon-leetcode-plain"></i>
+                    </a>
+                </div>
+                <br />
 
-            <div class="icons">
-                <a href="mailto:ayushvishwakarma1405@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/ayush-vishwakarma-a2450a28b" target="_blank">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/AyushAI14" target="_blank">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://leetcode.com/u/ayushaiml14/" target="_blank">
-                    <i class="devicon-leetcode-plain"></i>
-                </a>
+                <p class="desc">
+                    I like working with ML models, LLMs, RAG pipelines, MLOps
+                    architectures, and agent-based automation systems to build
+                    end-to-end production AI solutions.
+                </p>
+            </header>
 
-            </div>
-        </section>
+            <!-- SKILLS -->
+            <section class="skills" id="skills">
+                <h2>Skills</h2>
 
-        <footer>
-            © 2025 Ayush Vishwakarma — Data Science Portfolio
-        </footer>
-    </div>
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>NLP</span>
+                    <span>LLMs</span>
+                    <span>MLOps</span>
+                    <span>FastAPI</span>
+                    <span>Docker</span>
+                    <span>LangChain</span>
+                    <span>Autogen</span>
+                    <span>Google ADK</span>
+                    <span>Agentic AI</span>
+                </div>
+            </section>
 
-    <script src="script.js"></script>
+            <!-- PROJECTS -->
+            <section class="projects" id="projects">
+                <h2>Projects</h2>
 
-</body>
+                <div class="project-grid">
+                    <div class="project-card fadeUp tilt">
+                        <img src="datapilotai.png" />
+                        <h3>DataPilot — Agentic AI</h3>
 
+                        <p class="mini-desc">
+                            Multi-agent Data Science workflow automation system
+                            powered by Google ADK.
+                        </p>
+
+                        <ul class="tech">
+                            <li>Google ADK</li>
+                            <li>Python</li>
+                            <li>Kaggle MCP</li>
+                            <li>FireCrawl MCP</li>
+                            <li>Prompt Engineering</li>
+                            <li>Gemini API</li>
+                        </ul>
+
+                        <a
+                            class="gh"
+                            href="https://github.com/AyushAI14/Datapilot-AI-Agent"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card fadeUp tilt">
+                        <img src="rag_image.png" />
+                        <h3>Crypto Whitepaper RAG Bot</h3>
+
+                        <p class="mini-desc">
+                            Interact with any crypto whitepaper using Agentic
+                            RAG and Milvus Vector DB.
+                        </p>
+
+                        <ul class="tech">
+                            <li>RAG</li>
+                            <li>Web-Scraping</li>
+                            <li>LangChain</li>
+                            <li>Milvus</li>
+                            <li>Gemini</li>
+                        </ul>
+
+                        <a
+                            class="gh"
+                            href="https://github.com/AyushAI14/LLM-Powered-Crypto-Whitepaper-Chatbot"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card fadeUp tilt">
+                        <img src="capstone-mlops.jpeg" />
+                        <h3>MLOps Capstone</h3>
+
+                        <p class="mini-desc">
+                            Full ML lifecycle architecture: pipelines, tracking,
+                            CI/CD & deployment.
+                        </p>
+
+                        <ul class="tech">
+                            <li>Python</li>
+                            <li>Scikit-learn</li>
+                            <li>Dagshub</li>
+                            <li>FastAPI</li>
+                            <li>DVC</li>
+                            <li>Docker</li>
+                            <li>MLflow</li>
+                        </ul>
+
+                        <a
+                            class="gh"
+                            href="https://github.com/AyushAI14/Mlops-Capstone-Project"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+
+                    <div class="project-card fadeUp tilt">
+                        <img src="toxiccoment.png" />
+                        <h3>Toxic Comment Analyzer</h3>
+
+                        <p class="mini-desc">
+                            Fine-tuned DistilBERT toxicity classification for
+                            YouTube comments.
+                        </p>
+
+                        <ul class="tech">
+                            <li>NLP</li>
+                            <li>BERT</li>
+                            <li>FastAPI</li>
+                            <li>Streamlit</li>
+                        </ul>
+
+                        <a
+                            class="gh"
+                            href="https://github.com/AyushAI14/Toxic-Comment-Analyser"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-card fadeUp tilt">
+                        <img src="vechile.png" />
+                        <h3>Vehicle Price Prediction</h3>
+
+                        <p class="mini-desc">
+                            End to End Predicting the selling price of vehicles
+                            using machine learning models.
+                        </p>
+                        <ul class="tech">
+                            <li>Python</li>
+                            <li>pandas</li>
+                            <li>numpy</li>
+                            <li>matplotlib</li>
+                            <li>XGBoost</li>
+                            <li>FastAPI</li>
+                        </ul>
+
+                        <a
+                            class="gh"
+                            href="https://github.com/AyushAI14/Vehicle_Price_Prediction"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="project-card fadeUp tilt">
+                        <img src="warehouse.png" />
+                        <h3>Data Warehouse Project</h3>
+
+                        <p class="mini-desc">
+                            Builds a structured SQL warehouse, transforming raw
+                            CRM data into query-ready analytical reporting
+                            layers.
+                        </p>
+                        <ul class="tech">
+                            <li>SQL</li>
+                            <li>ETL</li>
+                            <li>Data Warehouse</li>
+                        </ul>
+
+                        <a
+                            class="gh"
+                            href="https://github.com/AyushAI14/SQL-Data-Warehouse-"
+                            target="_blank"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section class="experience" id="experience">
+                <h2>Experience</h2>
+
+                <div class="exp-box">
+                    <h3>Machine Learning Intern — Unified Mentor Pvt. Ltd.</h3>
+                    <p>Apr 2025 – May 2025 | Remote</p>
+
+                    <ul>
+                        <li>
+                            Built classical ML models using sklearn + pandas.
+                        </li>
+                        <li>Deployed FastAPI inference container system.</li>
+                        <li>Automated CI/CD with GitHub pipelines.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section class="contact" id="contact">
+                <h2>Contact</h2>
+
+                <div class="icons">
+                    <a href="mailto:ayushvishwakarma1405@gmail.com"
+                        ><i class="fa-solid fa-envelope"></i
+                    ></a>
+                    <a
+                        href="https://www.linkedin.com/in/ayush-vishwakarma-a2450a28b"
+                        target="_blank"
+                    >
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/AyushAI14" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                        href="https://leetcode.com/u/ayushaiml14/"
+                        target="_blank"
+                    >
+                        <i class="devicon-leetcode-plain"></i>
+                    </a>
+                </div>
+            </section>
+
+            <footer>© 2025 Ayush Vishwakarma — Data Science Portfolio</footer>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
 </html>

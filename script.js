@@ -77,3 +77,36 @@ document.querySelector(".page-wrapper").addEventListener("mousemove", e => {
     setTimeout(()=> d.remove(),600);
 });
 
+async function getSpotify() {
+    const userId = "1292745882990673940"; 
+    try {
+        const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+        const data = await response.json();
+
+        // Check if listening_to_spotify is true
+        if (data.success && data.data.listening_to_spotify) {
+            const spotify = data.data.spotify;
+            
+            // FIX: Changed .track to .song
+            document.getElementById('track-name').textContent = spotify.song;
+            document.getElementById('artist-name').textContent = spotify.artist;
+            
+            // Update UI
+            document.getElementById('spotify-card').classList.add('is-playing');
+            document.querySelector('.spotify-icon i').classList.add('fa-spin');
+        } else {
+            document.getElementById('track-name').textContent = "Not Listening";
+            document.getElementById('artist-name').textContent = "Spotify";
+            document.getElementById('spotify-card').classList.remove('is-playing');
+            document.querySelector('.spotify-icon i').classList.remove('fa-spin');
+        }
+    } catch (error) {
+        console.error("Error fetching Spotify data", error);
+    }
+}
+
+// THIS IS VITAL: Ensures the elements exist before the script tries to find them
+document.addEventListener('DOMContentLoaded', () => {
+    getSpotify();
+    setInterval(getSpotify, 15000);
+});
