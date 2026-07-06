@@ -7,28 +7,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   };
 });
 
-
-// typing animation
-const el = document.querySelector(".typewrite");
-const words = JSON.parse(el.getAttribute("data-words"));
-let i = 0, index = 0, deleting = false;
-
-function tick(){
-  const word = words[index];
-
-  if(!deleting){
-    el.textContent = word.substring(0,i++);
-    if(i === word.length){ deleting = true; setTimeout(tick,900); return;}
-  }
-  else {
-    el.textContent = word.substring(0,i--);
-    if(i === 0){ deleting = false; index = (index+1)%words.length; }
-  }
-
-  setTimeout(tick, deleting?40:80);
-}
-tick();
-
 // subtle card animation setup
 document.querySelectorAll(".project-card").forEach(card => {
     card.onmousemove = e => {
@@ -43,70 +21,35 @@ document.querySelectorAll(".project-card").forEach(card => {
     card.onmouseleave = () => card.style.transform = "rotateX(0deg)";
 });
 
-// cursor water drop animation
-document.addEventListener("mousemove", function(e){
+// ML Training Loop Simulator
+let currentEpoch = 42;
+let currentLoss = 0.4321;
 
-    const drop = document.createElement("span");
-    drop.classList.add("ripple");
-
-    const wrapperOffset = document.querySelector(".page-wrapper")
-                                .getBoundingClientRect();
-
-    drop.style.left = (e.clientX - wrapperOffset.left) + "px";
-    drop.style.top  = (e.clientY - wrapperOffset.top) + "px";
-
-    document.getElementById("ripple-container").appendChild(drop);
-
-    setTimeout(()=> drop.remove(), 700);
-
-});
-
-document.querySelector(".page-wrapper").addEventListener("mousemove", e => {
-    const area = document.getElementById("cursor-ripple");
-
-    const d = document.createElement("div");
-    d.className = "dot";
-
-    const box = area.getBoundingClientRect();
-
-    d.style.left = `${e.clientX - box.left}px`;
-    d.style.top  = `${e.clientY - box.top}px`;
-
-    area.appendChild(d);
-
-    setTimeout(()=> d.remove(),600);
-});
-
-async function getSpotify() {
-    const userId = "1292745882990673940"; 
-    try {
-        const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
-        const data = await response.json();
-
-        // Check if listening_to_spotify is true
-        if (data.success && data.data.listening_to_spotify) {
-            const spotify = data.data.spotify;
-            
-            // FIX: Changed .track to .song
-            document.getElementById('track-name').textContent = spotify.song;
-            document.getElementById('artist-name').textContent = spotify.artist;
-            
-            // Update UI
-            document.getElementById('spotify-card').classList.add('is-playing');
-            document.querySelector('.spotify-icon i').classList.add('fa-spin');
-        } else {
-            document.getElementById('track-name').textContent = "Not Listening";
-            document.getElementById('artist-name').textContent = "Spotify";
-            document.getElementById('spotify-card').classList.remove('is-playing');
-            document.querySelector('.spotify-icon i').classList.remove('fa-spin');
+function simulateTrainingLoop() {
+    // 1. Epoch (slowly increment to 100, then reset)
+    if (Math.random() > 0.8) {
+        currentEpoch++;
+        if (currentEpoch > 100) {
+            currentEpoch = 1;
+            currentLoss = Math.random() * 0.5 + 0.5; // Reset loss high
         }
-    } catch (error) {
-        console.error("Error fetching Spotify data", error);
     }
+    document.getElementById('epoch-val').textContent = `${currentEpoch}/100`;
+
+    // 2. Loss (slowly decrease, with minor fluctuations)
+    let lossChange = (Math.random() * 0.005) - 0.001; // mostly goes down
+    currentLoss = Math.max(0.0100, currentLoss - lossChange);
+    document.getElementById('loss-val').textContent = currentLoss.toFixed(4);
+
+    // 3. VRAM (fluctuate slightly)
+    const vramBase = 18.2;
+    const vramFluctuation = (Math.random() * 0.6 - 0.3); // -0.3 to +0.3
+    const vramTotal = (vramBase + vramFluctuation).toFixed(1);
+    document.getElementById('vram-val').textContent = vramTotal + 'G';
 }
 
-// THIS IS VITAL: Ensures the elements exist before the script tries to find them
 document.addEventListener('DOMContentLoaded', () => {
-    getSpotify();
-    setInterval(getSpotify, 15000);
+    // Start training loop telemetry
+    simulateTrainingLoop();
+    setInterval(simulateTrainingLoop, 800);
 });
