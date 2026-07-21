@@ -20,6 +20,10 @@
         <link rel="stylesheet" href="style.css" />
     </head>
 
+    <body>
+
+        <div class="scroll-progress" id="scroll-progress"></div>
+
         <!-- MODERN JUPYTER NAVBAR -->
         <div class="jupyter-header">
             <div class="jupyter-top-row">
@@ -58,11 +62,11 @@
 
 
             <!-- HEADER -->
-            <header class="hero">
+            <header class="hero reveal" id="about">
                 <img src="avatar.jpg" class="avatar-round" />
 
                 <h1>Ayush Vishwakarma</h1>
-                <p class="sub">Data Science | ML | NLP | Agentic AI | MLOps</p>
+                <p class="sub"><span id="typed-sub"></span><span class="typed-cursor"></span></p>
                 <div class="icons">
                     <br />
                     <a href="mailto:ayushvishwakarma1405@gmail.com"
@@ -94,7 +98,7 @@
             </header>
 
             <!-- SKILLS -->
-            <section class="skills" id="skills">
+            <section class="skills reveal" id="skills">
                 <h2>Skills</h2>
 
                 <div class="skill-tags">
@@ -113,7 +117,7 @@
             </section>
 
             <!-- PROJECTS -->
-            <section class="projects" id="projects">
+            <section class="projects reveal" id="projects">
                 <h2>Projects</h2>
 
                 <div class="project-grid">
@@ -300,7 +304,7 @@
             </section>
 
             <!-- EXPERIENCE -->
-            <section class="experience" id="experience">
+            <section class="experience reveal" id="experience">
                 <h2>Experience</h2>
 
                 <div class="exp-box">
@@ -318,7 +322,7 @@
             </section>
 
             <!-- CONTACT -->
-            <section class="contact" id="contact">
+            <section class="contact reveal" id="contact">
                 <h2>Contact</h2>
 
                 <div class="icons">

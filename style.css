@@ -7,6 +7,45 @@ body {
     padding: 0;
 }
 
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #58a6ff, #7ee787, #f78166);
+    z-index: 2000;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Typing Cursor */
+.typed-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 16px;
+    background: #58a6ff;
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 .page-wrapper {
     max-width: 900px;
     margin: 0 auto;
@@ -123,8 +162,9 @@ section, .hero, .experience, .contact {
     position: relative;
     border: 1px solid transparent;
     border-radius: 4px;
-    border-left: 2px solid #30363d; /* minimalist permanent line */
+    border-left: 2px solid #30363d;
     transition: 0.3s;
+    scroll-margin-top: 140px;
 }
 
 section:hover, .hero:hover {
@@ -145,7 +185,7 @@ section::before, .hero::before {
     color: #58a6ff; 
     font-weight: bold;
 }
-.hero::before { content: "In [1]:"; }
+#about::before { content: "In [1]:"; }
 #skills::before { content: "In [2]:"; }
 #projects::before { content: "In [3]:"; }
 #experience::before { content: "In [4]:"; }
